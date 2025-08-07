@@ -1,8 +1,10 @@
 let content = document.querySelectorAll(".card");
+
 let massif_2 = [];
 massif_2 = Array.from(content);
 
 content = document.querySelectorAll(".rotator__case");
+
 let massif_1 = [];
 massif_1 = Array.from(content);
 
@@ -23,8 +25,7 @@ let fbFunc = function() {
       let res = massif_1.findIndex(function(item) {
           return item.className.includes("rotator__case_active") &&
           (item.closest(".card") == massif_2[i]);
-          
-      });
+                });
       if(res >= 0) {
         let element = massif_1[res];
         element.className = "rotator__case";
@@ -38,8 +39,6 @@ let fbFunc = function() {
         element.className += " rotator__case_active";
       }
     }
-
     return false;
 }
-
 window.setInterval(fbFunc, 1000);
